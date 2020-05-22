@@ -5,7 +5,7 @@
   "tags": {
     "dashboardKey": "F5ASMDashboard",
     "hidden-title": "F5 BIGIP ASM - {Workspace_Name}",
-    "version": "1.0",
+    "version": "1.2",
     "workspaceName": "{Workspace_Name}"
   },
   "properties": {
@@ -24,15 +24,19 @@
               "inputs": [
                 {
                   "name": "subscriptionId",
-                  "value": "4a2060f7-88fe-42ee-a2d8-15c3c221aa50"
+                  "value": "{Subscription_Id}"
                 },
                 {
                   "name": "resourceGroup",
-                  "value": "ASI4ISG2Group"
+                  "value": "{Resource_Group}"
                 },
                 {
                   "name": "workspaceName",
-                  "value": "ASI4ISG2"
+                  "value": "{Workspace_Name}"
+                },
+                {
+                  "name": "dashboardName",
+                  "value": "F5ASMDashboard"
                 },
                 {
                   "name": "menuItemToOpen",
@@ -56,7 +60,7 @@
               "settings": {
                 "content": {
                   "settings": {
-                    "content": "<div style='font-size:300%;'>F5 BIG-IP Advanced Web Application Firewall Overview</div>  ",
+                    "content": "<div style='font-size:300%;'>F5 BIG-IP ASM Insights</div>  ",
                     "title": "",
                     "subtitle": " "
                   }
@@ -100,12 +104,12 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
                   "name": "Query",
-                  "value": "F5Telemetry_event_CL \n| summarize count() by hostname_s, bin(TimeGenerated, 5m) \n| render barchart kind=stacked\n"
+                  "value": "F5Telemetry_LTM_CL \n| summarize count() by hostname_s, bin(TimeGenerated, 5m) \n| render barchart kind=stacked\n"
                 },
                 {
                   "name": "TimeRange",
@@ -194,7 +198,7 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
@@ -288,7 +292,7 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
@@ -382,7 +386,7 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
@@ -476,12 +480,12 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
                   "name": "Query",
-                  "value": "F5Telemetry_event_CL \n| project request_status_s \n| where isnotempty(request_status_s) \n| summarize ASM_Policy_Status = count() by request_status_s\n"
+                  "value": "F5Telemetry_ASM_CL \n| project request_status_s \n| where isnotempty(request_status_s) \n| summarize ASM_Policy_Status = count() by request_status_s\n"
                 },
                 {
                   "name": "TimeRange",
@@ -565,12 +569,12 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
                   "name": "Query",
-                  "value": "F5Telemetry_event_CL \n| where isnotempty(attack_type_s) \n| summarize count() by hostname_s, bin(TimeGenerated, 1h)\n"
+                  "value": "F5Telemetry_ASM_CL \n| where isnotempty(attack_type_s) \n| summarize count() by hostname_s, bin(TimeGenerated, 1h)\n"
                 },
                 {
                   "name": "TimeRange",
@@ -659,12 +663,12 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
                   "name": "Query",
-                  "value": "F5Telemetry_event_CL \n| project attack_type_s \n| where isnotempty(attack_type_s) \n| summarize Total_Attacks = count() by attack_type_s | sort by Total_Attacks\n"
+                  "value": "F5Telemetry_ASM_CL \n| project attack_type_s \n| where isnotempty(attack_type_s) \n| summarize Total_Attacks = count() by attack_type_s | sort by Total_Attacks\n"
                 },
                 {
                   "name": "TimeRange",
@@ -748,12 +752,12 @@
                     "SubscriptionId": "{Subscription_Id}",
                     "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
-                   
+
                   }
                 },
                 {
                   "name": "Query",
-                  "value": "F5Telemetry_event_CL \n| project ip_client_s, request_status_s ,hostname_s, request_s , attack_type_s, violations_s, violation_rating_s, session_id_s \n| where  request_status_s == \"blocked\" \n"
+                  "value": "F5Telemetry_ASM_CL \n| project ip_client_s, request_status_s ,hostname_s, request_s , attack_type_s, violations_s, violation_rating_s, session_id_s \n| where  request_status_s == \"blocked\" \n"
                 },
                 {
                   "name": "TimeRange",

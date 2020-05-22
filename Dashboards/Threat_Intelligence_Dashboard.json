@@ -5,7 +5,7 @@
   "tags": {
     "dashboardKey": "ThreatIntelligenceDashboard",
     "hidden-title": "Threat Intelligence Dashboard - {Workspace_Name}",
-    "version": "1.0",
+    "version": "1.2",
     "workspaceName": "{Workspace_Name}"
 },
   "properties": {
@@ -28,11 +28,15 @@
                 },
                 {
                   "name": "resourceGroup",
-                  "value": "SOC"
+                  "value": "{Resource_Group}"
                 },
                 {
                   "name": "workspaceName",
-                  "value": "CyberSecurityDemo"
+                  "value": "{Workspace_Name}"
+                },
+                {
+                  "name": "dashboardName",
+                  "value": "ThreatIntelligenceDashboard"
                 },
                 {
                   "name": "menuItemToOpen",
@@ -77,7 +81,7 @@
                   "name": "ComponentId",
                   "value": {
                     "SubscriptionId": "{Subscription_Id}",
-                    "ResourceGroup": "SOC",
+                    "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
                   }
                 },
@@ -165,7 +169,7 @@
                   "name": "ComponentId",
                   "value": {
                     "SubscriptionId": "{Subscription_Id}",
-                    "ResourceGroup": "SOC",
+                    "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
                   }
                 },
@@ -253,7 +257,7 @@
                   "name": "ComponentId",
                   "value": {
                     "SubscriptionId": "{Subscription_Id}",
-                    "ResourceGroup": "SOC",
+                    "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
                   }
                 },
@@ -341,7 +345,7 @@
                   "name": "ComponentId",
                   "value": {
                     "SubscriptionId": "{Subscription_Id}",
-                    "ResourceGroup": "SOC",
+                    "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
                   }
                 },
@@ -434,7 +438,7 @@
                   "name": "ComponentId",
                   "value": {
                     "SubscriptionId": "{Subscription_Id}",
-                    "ResourceGroup": "SOC",
+                    "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
                   }
                 },
@@ -509,7 +513,7 @@
                   "name": "ComponentId",
                   "value": {
                     "SubscriptionId": "{Subscription_Id}",
-                    "ResourceGroup": "SOC",
+                    "ResourceGroup": "{Resource_Group}",
                     "Name": "{Workspace_Name}"
                   }
                 },
@@ -586,52 +590,6 @@
           }
         }
       }
-    },
-    "metadata": {
-      "model": {
-        "timeRange": {
-          "value": {
-            "relative": {
-              "duration": 24,
-              "timeUnit": 1
-            }
-          },
-          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
-        },
-        "filterLocale": {
-          "value": "en-us"
-        },
-        "filters": {
-          "value": {
-            "MsPortalFx_TimeRange": {
-              "model": {
-                "format": "utc",
-                "granularity": "auto",
-                "relative": "7d"
-              },
-              "displayCache": {
-                "name": "UTC Time",
-                "value": "Past 7 days"
-              },
-              "filteredPartIds": [
-                "StartboardPart-AnalyticsPart-fd00d33d-0a08-4200-a6cd-0491dcbd9282",
-                "StartboardPart-AnalyticsPart-fd00d33d-0a08-4200-a6cd-0491dcbd9284",
-                "StartboardPart-AnalyticsPart-fd00d33d-0a08-4200-a6cd-0491dcbd9286",
-                "StartboardPart-AnalyticsPart-fd00d33d-0a08-4200-a6cd-0491dcbd9288",
-                "StartboardPart-AnalyticsPart-fd00d33d-0a08-4200-a6cd-0491dcbd928a",
-                "StartboardPart-AnalyticsPart-fd00d33d-0a08-4200-a6cd-0491dcbd928c"
-              ]
-            }
-          }
-        }
-      }
     }
-  },
-  "name": "TI Summery Dashboard - CyberSecurityDemo",
-  "type": "Microsoft.Portal/dashboards",
-  "location": "INSERT LOCATION",
-  "tags": {
-    "hidden-title": "TI Summery Dashboard - CyberSecurityDemo"
-  },
-  "apiVersion": "2015-08-01-preview"
+  }
 }

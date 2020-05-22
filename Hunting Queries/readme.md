@@ -1,12 +1,12 @@
 # About
 * This repo contains sample queries for Hunting to aid in the development of techniques for threat hunting leveraging logs from multiple sources.
-* With these sample queries, you can get a headstart in learning the Kusto Query Language (KQS) and understanding the different data sources.
+* With these sample queries, you can get a headstart in learning the Kusto Query Language (KQL) and understanding the different data sources.
 * To get started, simply paste a sample query into the user interface and run the query. 
 
 # Resources
-* [Azure Log Analytics Query Language Reference](https://docs-analytics-eus.azurewebsites.net/index.html)
-* [SQL to Log Analytics Query Cheat Sheet](https://docs-analytics-eus.azurewebsites.net/learn/cheatsheets/sql_to_azure_log_analytics.html)
-* [Splunk to Log Analytics Query Cheat Sheet](https://docs-analytics-eus.azurewebsites.net/learn/cheatsheets/overview_splunk_to_azure_log_analytics_operators.html)
+* [Azure Log Analytics Query Language Reference](https://docs.microsoft.com/en-us/azure/kusto/query/index)
+* [SQL to Log Analytics Query Cheat Sheet](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/sql-cheatsheet)
+* [Splunk to Log Analytics Query Cheat Sheet](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/splunk-cheatsheet)
 * [MITRE ATT&CK](https://attack.mitre.org/wiki/Main_Page)
 * [MITRE CAR](https://car.mitre.org/wiki/Main_Page)
 
